@@ -3,507 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melt in 90 Days | Transform Your Body</title>
+    <meta name="description" content="Transform your body in 90 days with our science-backed fitness and nutrition program">
+    <title>Meltin90 - Transform Your Body in 90 Days</title>
     <style>
         :root {
             --primary-blue: #1e88e5;
             --dark-blue: #0d47a1;
-            --light-blue: #64b5f6;
             --light-grey: #f5f5f5;
-            --medium-grey: #e0e0e0;
-            --dark-grey: #616161;
+            --text-dark: #2d3436;
         }
-        
+
+        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
-        
+
         body {
-            background-color: white;
-            color: var(--dark-grey);
             line-height: 1.6;
+            color: var(--text-dark);
         }
-        
+
+        /* Header styles */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
         }
-        
-        .container {
+
+        .navbar {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .navbar {
+            padding: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
         }
-        
+
         .logo {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 1.5rem;
+            font-weight: bold;
             color: var(--primary-blue);
         }
-        
-        .logo span {
-            color: var(--dark-grey);
-        }
-        
+
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 2rem;
+            align-items: center;
         }
-        
+
         .nav-links a {
             text-decoration: none;
-            color: var(--dark-grey);
-            font-weight: 500;
+            color: var(--text-dark);
             transition: color 0.3s ease;
         }
-        
+
         .nav-links a:hover {
             color: var(--primary-blue);
         }
-        
-        .nav-action {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        
-        .nav-action:hover {
-            background-color: var(--dark-blue);
-        }
-        
-        .mobile-menu {
-            display: none;
-            cursor: pointer;
-        }
-        
+
+        /* Hero section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-            color: white;
-            padding: 100px 0;
             text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
         }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
+
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 800;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
-        
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: white;
-            color: var(--primary-blue);
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 18px;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--dark-grey);
-            position: relative;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary-blue);
-            border-radius: 2px;
-        }
-        
-        .section-title p {
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--dark-grey);
-            font-size: 18px;
-        }
-        
+
+        /* Features section */
         .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            padding: 4rem 1rem;
+            background: var(--light-grey);
         }
-        
-        .feature {
-            text-align: center;
-            padding: 30px;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .feature:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-icon {
-            margin-bottom: 20px;
-            font-size: 48px;
-            color: var(--primary-blue);
-        }
-        
-        .feature h3 {
-            margin-bottom: 15px;
-            font-size: 22px;
-            color: var(--dark-grey);
-        }
-        
-        .transformations {
-            background-color: var(--light-grey);
-        }
-        
-        .transformation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .transformation-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .transformation-image {
-            height: 250px;
-            background-color: var(--medium-grey);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .transformation-info {
-            padding: 20px;
-        }
-        
-        .transformation-info h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-value {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--primary-blue);
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            color: var(--dark-grey);
-        }
-        
-        .meal-plans {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .meal-plan {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .meal-plan:hover {
-            transform: translateY(-10px);
-        }
-        
-        .meal-plan-header {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .meal-plan-body {
-            padding: 30px;
-        }
-        
-        .meal-plan-features {
-            margin: 20px 0;
-        }
-        
-        .meal-plan-features li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .meal-plan-features li:before {
-            content: '✓';
-            color: var(--primary-blue);
-            margin-right: 10px;
-            font-weight: bold;
-        }
-        
-        .fitness-programs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .fitness-program {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .fitness-program-image {
-            height: 200px;
-            background-color: var(--medium-grey);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .fitness-program-info {
-            padding: 20px;
-        }
-        
-        .testimonials {
-            background-color: var(--light-grey);
-        }
-        
-        .testimonial-slider {
-            max-width: 800px;
+
+        .feature-grid {
+            max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        
-        .testimonial {
-            padding: 40px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .testimonial-text {
-            font-size: 18px;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--dark-grey);
-        }
-        
-        .testimonial-role {
-            font-size: 14px;
-            color: var(--dark-grey);
-            opacity: 0.7;
-        }
-        
-        .contact {
-            background-color: white;
-        }
-        
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 40px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--medium-grey);
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-        }
-        
-        .submit-button {
-            background-color: var(--primary-blue);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .submit-button:hover {
-            background-color: var(--dark-blue);
-        }
-        
+
+        /* Footer styles */
         footer {
-            background-color: var(--dark-blue);
+            background: var(--text-dark);
             color: white;
-            padding: 60px 0 20px;
+            padding: 3rem 1rem;
         }
-        
+
         .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 2rem;
         }
-        
-        .footer-column h3 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            position: relative;
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
         }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background-color: var(--light-blue);
-        }
-        
+
         .footer-links {
             list-style: none;
         }
-        
+
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
         }
-        
+
         .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
-            transition: color 0.3s ease;
         }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icon {
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            opacity: 1;
-        }
-        
-        /* Animation classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Responsive styles */
+
+        /* Mobile styles */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -514,337 +145,86 @@
             }
             
             .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 30px;
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">Melt<span>in90</span></div>
-                <div class="nav-links">
-                    <a href="#features">Features</a>
-                    <a href="#transformations">Transformations</a>
-                    <a href="#meal-plans">Meal Plans</a>
-                    <a href="#fitness-programs">Fitness</a>
-                    <a href="#about">About Us</a>
-                    <a href="#blog">Blog</a>
-                </div>
-                <a href="#contact" class="nav-action">Get Started</a>
-                <div class="mobile-menu">☰</div>
-            </nav>
-        </div>
+        <nav class="navbar">
+            <div class="logo">Meltin90</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#transformations">Transformations</a>
+                <a href="#meal-plans">Meal Plans</a>
+                <a href="#fitness">Fitness</a>
+                <a href="#about">About Us</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Get Started</a>
+            </div>
+            <div class="mobile-menu">☰</div>
+        </nav>
     </header>
-    
-    <!-- Hero Section -->
+
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Transform Your Body in Just 90 Days</h1>
-                <p>Our scientifically backed fitness and nutrition program will help you achieve the body of your dreams faster than you ever thought possible.</p>
-                <a href="#contact" class="cta-button">Start Your Transformation Today!</a>
+        <h1>Transform Your Body in Just 90 Days</h1>
+        <p>Our scientifically backed fitness and nutrition program will help you achieve the body of your dreams faster than you ever thought possible.</p>
+        <a href="#contact" class="cta-button">Start Your Transformation Today!</a>
+    </section>
+
+    <section class="features" id="features">
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Personalized Plans</h3>
+                <p>Customized meal and fitness plans based on your body type, goals, and lifestyle.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🍎</div>
+                <h3>Expert Nutrition</h3>
+                <p>Nutrition plans designed by certified dietitians to maximize fat loss while preserving muscle.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💪</div>
+                <h3>Effective Workouts</h3>
+                <p>Science-backed exercise routines that deliver maximum results in minimum time.</p>
             </div>
         </div>
     </section>
-    
-    <!-- Features Section -->
-    <section id="features" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Melt in 90 Days?</h2>
-                <p>Our comprehensive program combines nutrition, exercise, and support to deliver amazing results.</p>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Meltin90</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#transformations">Success Stories</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
-            <div class="features">
-                <div class="feature fade-in">
-                    <div class="feature-icon">📊</div>
-                    <h3>Personalized Plans</h3>
-                    <p>Customized meal and fitness plans based on your body type, goals, and lifestyle.</p>
-                </div>
-                <div class="feature fade-in">
-                    <div class="feature-icon">🍎</div>
-                    <h3>Expert Nutrition</h3>
-                    <p>Nutrition plans designed by certified dietitians to maximize fat loss while preserving muscle.</p>
-                </div>
-                <div class="feature fade-in">
-                    <div class="feature-icon">💪</div>
-                    <h3>Effective Workouts</h3>
-                    <p>Science-backed exercise routines that deliver maximum results in minimum time.</p>
-                </div>
+            <div class="footer-section">
+                <h3>Programs</h3>
+                <ul class="footer-links">
+                    <li><a href="#meal-plans">Meal Plans</a></li>
+                    <li><a href="#fitness">Fitness Programs</a></li>
+                    <li><a href="#coaching">Coaching</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
-    
-    <!-- Transformations Section -->
-    <section id="transformations" class="section transformations">
-        <div class="container">
-            <div class="section-title">
-                <h2>Real Transformations</h2>
-                <p>See the incredible results our clients have achieved with the Melt in 90 Days program.</p>
-            </div>
-            <div class="transformation-grid">
-                <div class="transformation-card fade-in">
-                    <div class="transformation-image">
-                        <img src="/api/placeholder/400/320" alt="Before and After Transformation">
-                    </div>
-                    <div class="transformation-info">
-                        <h3>John's Journey</h3>
-                        <div class="stats">
-                            <div class="stat">
-                                <div class="stat-value">42 lbs</div>
-                                <div class="stat-label">Weight Lost</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-value">8%</div>
-                                <div class="stat-label">Body Fat</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-value">90</div>
-                                <div class="stat-label">Days</div>
-                            </div>
-                        </div>
-                        <p>"I never thought I could transform my body this quickly. The meal plans were easy to follow, and the workouts were challenging but effective."</p>
-                    </div>
-                </div>
-                <div class="transformation-card fade-in">
-                    <div class="transformation-image">
-                        <img src="/api/placeholder/400/320" alt="Before and After Transformation">
-                    </div>
-                    <div class="transformation-info">
-                        <h3>Sarah's Success</h3>
-                        <div class="stats">
-                            <div class="stat">
-                                <div class="stat-value">35 lbs</div>
-                                <div class="stat-label">Weight Lost</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-value">12%</div>
-                                <div class="stat-label">Body Fat</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-value">90</div>
-                                <div class="stat-label">Days</div>
-                            </div>
-                        </div>
-                        <p>"This program changed my life. Not only did I lose weight, but I gained confidence and energy I never knew I had."</p>
-                    </div>
-                </div>
-                <div class="transformation-card fade-in">
-                    <div class="transformation-image">
-                        <img src="/api/placeholder/400/320" alt="Before and After Transformation">
-                    </div>
-                    <div class="transformation-info">
-                        <h3>Michael's Makeover</h3>
-                        <div class="stats">
-                            <div class="stat">
-                                <div class="stat-value">51 lbs</div>
-                                <div class="stat-label">Weight Lost</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-value">15%</div>
-                                <div class="stat-label">Body Fat</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-value">90</div>
-                                <div class="stat-label">Days</div>
-                            </div>
-                        </div>
-                        <p>"At 45, I thought it was too late to get in shape. Melt in 90 Days proved me wrong. The structured program made all the difference."</p>
-                    </div>
-                </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
             </div>
         </div>
-    </section>
-    
-    <!-- Meal Plans Section -->
-    <section id="meal-plans" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Customized Meal Plans</h2>
-                <p>Nutrition is 80% of your results. Our meal plans are designed to maximize fat loss while keeping you satisfied.</p>
-            </div>
-            <div class="meal-plans">
-                <div class="meal-plan fade-in">
-                    <div class="meal-plan-header">
-                        <h3>High-Protein Plan</h3>
-                        <p>Ideal for muscle building</p>
-                    </div>
-                    <div class="meal-plan-body">
-                        <p>Our high-protein meal plan focuses on lean proteins to help preserve and build muscle while you lose fat.</p>
-                        <ul class="meal-plan-features">
-                            <li>High protein ratio (30-40% of calories)</li>
-                            <li>Moderate carbs (30-35% of calories)</li>
-                            <li>Healthy fats (25-30% of calories)</li>
-                            <li>Full grocery lists included</li>
-                            <li>Simple, quick recipes</li>
-                        </ul>
-                        <a href="#contact" class="nav-action">View Sample Plan</a>
-                    </div>
-                </div>
-                <div class="meal-plan fade-in">
-                    <div class="meal-plan-header">
-                        <h3>Vegan Plan</h3>
-                        <p>Plant-based fat loss</p>
-                    </div>
-                    <div class="meal-plan-body">
-                        <p>Our vegan meal plan provides all the nutrients you need for effective fat loss without animal products.</p>
-                        <ul class="meal-plan-features">
-                            <li>100% plant-based ingredients</li>
-                            <li>Complete protein combinations</li>
-                            <li>Rich in fiber and micronutrients</li>
-                            <li>Full grocery lists included</li>
-                            <li>Simple, quick recipes</li>
-                        </ul>
-                        <a href="#contact" class="nav-action">View Sample Plan</a>
-                    </div>
-                </div>
-                <div class="meal-plan fade-in">
-                    <div class="meal-plan-header">
-                        <h3>Low-Carb Plan</h3>
-                        <p>Fast fat loss focus</p>
-                    </div>
-                    <div class="meal-plan-body">
-                        <p>Our low-carb meal plan is designed for rapid fat loss while keeping energy levels stable.</p>
-                        <ul class="meal-plan-features">
-                            <li>Low carb ratio (15-20% of calories)</li>
-                            <li>High healthy fats (50-60% of calories)</li>
-                            <li>Moderate protein (25-30% of calories)</li>
-                            <li>Full grocery lists included</li>
-                            <li>Simple, quick recipes</li>
-                        </ul>
-                        <a href="#contact" class="nav-action">View Sample Plan</a>
-                    </div>
-                </div>
-            </div>
+        <div class="footer-bottom">
+            <p>© 2023 Meltin90. All rights reserved.</p>
         </div>
-    </section>
-    
-    <!-- Fitness Programs Section -->
-    <section id="fitness-programs" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Fitness Programs</h2>
-                <p>Our exercise programs are tailored to your fitness level and designed to maximize fat burning.</p>
-            </div>
-            <div class="fitness-programs">
-                <div class="fitness-program fade-in">
-                    <div class="fitness-program-image">
-                        <img src="/api/placeholder/400/320" alt="Beginner Fitness Program">
-                    </div>
-                    <div class="fitness-program-info">
-                        <h3>Beginner Program</h3>
-                        <p>For those new to fitness or returning after a long break. This program focuses on building a foundation of strength and endurance.</p>
-                        <ul class="meal-plan-features">
-                            <li>3-4 workouts per week</li>
-                            <li>30-40 minutes per session</li>
-                            <li>Low impact exercises</li>
-                            <li>Proper form instruction</li>
-                        </ul>
-                        <a href="#contact" class="nav-action">Learn More</a>
-                    </div>
-                </div>
-                <div class="fitness-program fade-in">
-                    <div class="fitness-program-image">
-                        <img src="/api/placeholder/400/320" alt="Intermediate Fitness Program">
-                    </div>
-                    <div class="fitness-program-info">
-                        <h3>Intermediate Program</h3>
-                        <p>For those with some fitness experience looking to accelerate their results and break through plateaus.</p>
-                        <ul class="meal-plan-features">
-                            <li>4-5 workouts per week</li>
-                            <li>40-50 minutes per session</li>
-                            <li>Moderate intensity circuits</li>
-                            <li>Progressive overload focus</li>
-                        </ul>
-                        <a href="#contact" class="nav-action">Learn More</a>
-                    </div>
-                </div>
-                <div class="fitness-program fade-in">
-                    <div class="fitness-program-image">
-                        <img src="/api/placeholder/400/320" alt="Advanced Fitness Program">
-                    </div>
-                    <div class="fitness-program-info">
-                        <h3>Advanced Program</h3>
-                        <p>For fitness enthusiasts looking to push their limits and achieve maximum results in the 90-day timeframe.</p>
-                        <ul class="meal-plan-features">
-                            <li>5-6 workouts per week</li>
-                            <li>45-60 minutes per session</li>
-                            <li>High-intensity training</li>
-                            <li>Advanced techniques</li>
-                        </ul>
-                        <a href="#contact" class="nav-action">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- About Us Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Melt in 90 Days</h2>
-                <p>Our story and mission to help people transform their bodies and lives.</p>
-            </div>
-            <div class="about-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <div class="about-image" style="margin-bottom: 30px;">
-                    <img src="/api/placeholder/400/320" alt="Founder Image" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
-                </div>
-                <div class="about-text">
-                    <h3 style="margin-bottom: 20px; font-size: 24px;">Our Vision</h3>
-                    <p style="margin-bottom: 20px; font-size: 18px;">Melt in 90 Days was born from a personal struggle with weight loss and the frustration of trying countless programs that promised results but never delivered.</p>
-                    <p style="margin-bottom: 20px; font-size: 18px;">After years of research, experimentation, and working with top nutritionists and fitness experts, we developed a system that consistently delivers impressive body transformations in just 90 days.</p>
-                    <p style="margin-bottom: 20px; font-size: 18px;">Our mission is simple: to provide a science-backed, sustainable approach to body transformation that works for real people with busy lives. We believe that everyone deserves to look and feel their best, and we're here to make that happen in the most efficient way possible.</p>
-                    <div style="margin-top: 40px;">
-                        <h4 style="margin-bottom: 10px; font-size: 20px;">John Smith</h4>
-                        <p>Founder, Melt in 90 Days</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Testimonials Section -->
-    <section class="section testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>What Our Clients Say</h2>
-                <p>Real feedback from people who've completed the Melt in 90 Days program.</p>
-            </div>
-            <div class="testimonial-slider">
-                <div class="testimonial fade-in">
-                    <p class="testimonial-text">"I was skeptical about the '90 days' promise, but I'm a believer now. I lost 37 pounds and dropped 4 dress sizes. The meal plans were easy to follow even with my busy schedule, and the workouts were challenging but doable."</p>
-                    <div class="testimonial-author">Jessica R.</div>
-                    <div class="testimonial-role">Lost 37 lbs in 90 Days</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Blog Section -->
-    <section id="blog" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Blog & Tips</h2>
-                <p>Helpful articles to support your transformation journey.</p>
-            </div>
-            <div class="features">
-                <div class="feature fade-in">
-                    <div class="feature-icon">📝</div>
-                    <h3>5 Meal Prep Hacks for Busy Professionals</h3>
-                    <p>Learn how to prepare a week's worth of healthy meals in under 2 hours.</p>
-                    <a href="#" style="color: var(--primary-blue); text-decoration: none; font
+    </footer>
+</body>
+</html>
