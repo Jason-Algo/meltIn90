@@ -3,122 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Transform your body in 90 days with our science-backed fitness and nutrition program">
-    <title>Meltin90 - Transform Your Body in 90 Days</title>
+    <title>Melt in 90 Days | Transform Your Body</title>
     <style>
-        :root {
-            --primary-blue: #1e88e5;
-            --dark-blue: #0d47a1;
-            --light-grey: #f5f5f5;
-            --text-dark: #2d3436;
-        }
-
-        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
             line-height: 1.6;
-            color: var(--text-dark);
+            color: #616161;
         }
 
-        /* Header styles */
         header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        .navbar {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem;
+            padding: 0 20px;
+        }
+
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-blue);
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e88e5;
+        }
+
+        .logo span {
+            color: #616161;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
-            align-items: center;
+            gap: 30px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-dark);
-            transition: color 0.3s ease;
+            color: #616161;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
-            color: var(--primary-blue);
+            color: #1e88e5;
         }
 
-        /* Hero section */
-        .hero {
-            text-align: center;
-            padding: 4rem 1rem;
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+        .nav-action {
+            background-color: #1e88e5;
             color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e88e5 0%, #0d47a1 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
         }
 
-        /* Features section */
-        .features {
-            padding: 4rem 1rem;
-            background: var(--light-grey);
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
         }
 
-        .feature-grid {
-            max-width: 1200px;
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #1e88e5;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 18px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #616161;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #1e88e5;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            max-width: 600px;
             margin: 0 auto;
+            color: #616161;
+            font-size: 18px;
+        }
+
+        .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 30px;
         }
 
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
+        .feature {
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
-        /* Footer styles */
-        footer {
-            background: var(--text-dark);
+        .feature-icon {
+            margin-bottom: 20px;
+            font-size: 48px;
+            color: #1e88e5;
+        }
+
+        .feature h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: #616161;
+        }
+
+        .transformations {
+            background-color: #f5f5f5;
+        }
+
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .transformation-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .transformation-info {
+            padding: 20px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1e88e5;
+        }
+
+        .meal-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .meal-plan {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .meal-plan-header {
+            background-color: #1e88e5;
             color: white;
-            padding: 3rem 1rem;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .meal-plan-body {
+            padding: 30px;
+        }
+
+        .meal-plan-features {
+            margin: 20px 0;
+            list-style-type: none;
+        }
+
+        .meal-plan-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .meal-plan-features li:before {
+            content: '✓';
+            color: #1e88e5;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .testimonials {
+            background-color: #f5f5f5;
+        }
+
+        .testimonial {
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #616161;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .submit-button {
+            background-color: #1e88e5;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #0d47a1;
+            color: white;
+            padding: 60px 0 20px;
         }
 
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: var(--primary-blue);
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
         }
 
         .footer-links {
@@ -126,105 +338,443 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
         }
 
         .footer-links a {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
         }
 
-        /* Mobile styles */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .coming-soon {
+            font-size: 24px;
+            color: #1e88e5;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .be-first {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .progress-path {
+            margin: 40px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+        }
+
+        .progress-step {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            margin: 0 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            background-color: #1e88e5;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-menu a {
+            color: #616161;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .mobile-menu a:hover {
+            color: #1e88e5;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-            
+
             .mobile-menu {
+                display: flex;
+            }
+
+            .menu-icon {
                 display: block;
             }
-            
+
             .hero h1 {
-                font-size: 2rem;
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .progress-steps {
+                flex-direction: column;
+            }
+
+            .progress-step {
+                margin: 10px 0;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <nav class="navbar">
-            <div class="logo">Meltin90</div>
-            <div class="nav-links">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Melt<span>in90</span></div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#transformations">Transformations</a>
+                    <a href="#meal-plans">Meal Plans</a>
+                    <a href="#about">About Us</a>
+                    <a href="#blog">Blog</a>
+                </div>
+                <div class="menu-icon">&#9776;</div>
+                <a href="#contact" class="nav-action">Get Started</a>
+            </nav>
+            <div class="mobile-menu">
                 <a href="#features">Features</a>
                 <a href="#transformations">Transformations</a>
                 <a href="#meal-plans">Meal Plans</a>
-                <a href="#fitness">Fitness</a>
                 <a href="#about">About Us</a>
                 <a href="#blog">Blog</a>
-                <a href="#contact">Get Started</a>
             </div>
-            <div class="mobile-menu">☰</div>
-        </nav>
+        </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <h1>Transform Your Body in Just 90 Days</h1>
-        <p>Our scientifically backed fitness and nutrition program will help you achieve the body of your dreams faster than you ever thought possible.</p>
-        <a href="#contact" class="cta-button">Start Your Transformation Today!</a>
-    </section>
-
-    <section class="features" id="features">
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Personalized Plans</h3>
-                <p>Customized meal and fitness plans based on your body type, goals, and lifestyle.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🍎</div>
-                <h3>Expert Nutrition</h3>
-                <p>Nutrition plans designed by certified dietitians to maximize fat loss while preserving muscle.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💪</div>
-                <h3>Effective Workouts</h3>
-                <p>Science-backed exercise routines that deliver maximum results in minimum time.</p>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Body in Just 90 Days</h1>
+                <p>Our scientifically backed fitness and nutrition program will help you achieve the body of your dreams faster than you ever thought possible.</p>
+                <a href="#contact" class="cta-button">Start Your Transformation Today!</a>
             </div>
         </div>
     </section>
 
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Melt in 90 Days?</h2>
+                <p>Our comprehensive program combines nutrition, exercise, and support to deliver amazing results.</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Personalized Plans</h3>
+                    <p>Customized meal and fitness plans based on your body type, goals, and lifestyle.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🍎</div>
+                    <h3>Expert Nutrition</h3>
+                    <p>Nutrition plans designed by certified dietitians to maximize fat loss while preserving muscle.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💪</div>
+                    <h3>Effective Workouts</h3>
+                    <p>Science-backed exercise routines that deliver maximum results in minimum time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Progression Journey -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Your Journey to Transformation</h2>
+                <p>Our program guides you through progressive phases to ensure optimal results and sustainable progress.</p>
+            </div>
+            <div class="progress-path">
+                <div class="progress-steps">
+                    <div class="progress-step">
+                        <div class="step-number">1</div>
+                        <h3>Beginner Phase</h3>
+                        <p>Build your foundation with introductory workouts and nutrition basics. Perfect for those new to fitness or returning after a break.</p>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">2</div>
+                        <h3>Intermediate Phase</h3>
+                        <p>Increase intensity and refine your nutrition. You'll see significant changes as your body adapts to new challenges.</p>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">3</div>
+                        <h3>Advanced Phase</h3>
+                        <p>Push your limits with advanced techniques to achieve maximum transformation and reach your ultimate goals.</p>
+                    </div>
+                </div>
+                <p>Each member progresses at their own pace through these phases with personalized guidance every step of the way.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformations Section -->
+    <section id="transformations" class="section transformations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Real Transformations</h2>
+                <p>See the incredible results our clients have achieved with the Melt in 90 Days program.</p>
+            </div>
+            <div class="transformation-grid">
+                <div class="transformation-card">
+                    <div class="coming-soon">Coming Soon!</div>
+                    <div class="be-first">Be the first to showcase your amazing transformation!</div>
+                    <p>Our program is newly launched and we're excited to feature your success story. Join now to be among the first transformation stories on our website.</p>
+                    <a href="#contact" class="cta-button" style="margin-top: 20px;">Start Your Transformation</a>
+                </div>
+                <div class="transformation-card">
+                    <div class="coming-soon">Transformation Challenges</div>
+                    <div class="be-first">Join our upcoming challenges!</div>
+                    <p>Be part of our inaugural 90-day transformation challenge. Win prizes, get extra support, and be featured prominently on our success page.</p>
+                    <a href="#contact" class="cta-button" style="margin-top: 20px;">Join the Challenge</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meal Plans Section -->
+    <section id="meal-plans" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Customized Meal Plans</h2>
+                <p>Nutrition is 80% of your results. Our meal plans are designed to maximize fat loss while keeping you satisfied.</p>
+            </div>
+            <div class="meal-plans">
+                <div class="meal-plan">
+                    <div class="meal-plan-header">
+                        <h3>High-Protein Plan</h3>
+                        <p>Ideal for muscle building</p>
+                    </div>
+                    <div class="meal-plan-body">
+                        <p>Our high-protein meal plan focuses on lean proteins to help preserve and build muscle while you lose fat.</p>
+                        <ul class="meal-plan-features">
+                            <li>High protein ratio (30-40% of calories)</li>
+                            <li>Moderate carbs (30-35% of calories)</li>
+                            <li>Healthy fats (25-30% of calories)</li>
+                            <li>Full grocery lists included</li>
+                            <li>Simple, quick recipes</li>
+                        </ul>
+                        <a href="#contact" class="nav-action">View Sample Plan</a>
+                    </div>
+                </div>
+                <div class="meal-plan">
+                    <div class="meal-plan-header">
+                        <h3>Vegan Plan</h3>
+                        <p>Plant-based fat loss</p>
+                    </div>
+                    <div class="meal-plan-body">
+                        <p>Our vegan meal plan provides all the nutrients you need for effective fat loss without animal products.</p>
+                        <ul class="meal-plan-features">
+                            <li>100% plant-based ingredients</li>
+                            <li>Complete protein combinations</li>
+                            <li>Rich in fiber and micronutrients</li>
+                            <li>Full grocery lists included</li>
+                            <li>Simple, quick recipes</li>
+                        </ul>
+                        <a href="#contact" class="nav-action">View Sample Plan</a>
+                    </div>
+                </div>
+                <div class="meal-plan">
+                    <div class="meal-plan-header">
+                        <h3>Low-Carb Plan</h3>
+                        <p>Fast fat loss focus</p>
+                    </div>
+                    <div class="meal-plan-body">
+                        <p>Our low-carb meal plan is designed for rapid fat loss while keeping energy levels stable.</p>
+                        <ul class="meal-plan-features">
+                            <li>Low carb ratio (15-20% of calories)</li>
+                            <li>High healthy fats (50-60% of calories)</li>
+                            <li>Moderate protein (25-30% of calories)</li>
+                            <li>Full grocery lists included</li>
+                            <li>Simple, quick recipes</li>
+                        </ul>
+                        <a href="#contact" class="nav-action">View Sample Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Melt in 90 Days</h2>
+                <p>Our story and mission to help people transform their bodies and lives.</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <div style="margin-bottom: 30px;">
+                    <img src="/api/placeholder/400/320" alt="Founder Image" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 20px; font-size: 24px;">Our Vision</h3>
+                    <p style="margin-bottom: 20px; font-size: 18px;">Melt in 90 Days was born from a personal struggle with weight loss and the frustration of trying countless programs that promised results but never delivered.</p>
+                    <p style="margin-bottom: 20px; font-size: 18px;">After extensive research, we have developed the perfect 90-day fitness plan. This system consistently delivers impressive body transformations, and the best part—it’s fully personalized! Using AI-driven optimization, we tailor each plan to fit your unique needs, goals, and lifestyle, ensuring maximum efficiency and results.</p>
+                    <p style="margin-bottom: 20px; font-size: 18px;">Our mission is simple: to provide a science-backed, sustainable approach to body transformation that works for real people with busy lives. We believe that everyone deserves to look and feel their best, and we're here to make that happen in the most effective way possible.</p>
+                    <div style="margin-top: 40px;">
+                        <h4 style="margin-bottom: 10px; font-size: 20px;">Jason Junior Nicodemus</h4>
+                        <p>Founder, Melt in 90 Days</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Blog & Tips</h2>
+                <p>Helpful articles to support your transformation journey.</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📝</div>
+                    <h3>5 Meal Prep Hacks for Busy Professionals</h3>
+                    <p>Learn how to prepare a week's worth of healthy meals in under 2 hours.</p>
+                    <a href="#" style="color: #1e88e5; text-decoration: none;">Read More</a>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Why Counting Calories Isn't Enough</h3>
+                    <p>Discover how macronutrient balance affects your fat loss and muscle gain.</p>
+                    <a href="#" style="color: #1e88e5; text-decoration: none;">Read More</a>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>HIIT vs. Steady-State Cardio: Which is Better?</h3>
+                    <p>A comparison of cardio methods for maximum fat burning efficiency.</p>
+                    <a href="#" style="color: #1e88e5; text-decoration: none;">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get Started Today</h2>
+                <p>Fill out the form below to begin your 90-day transformation journey.</p>
+            </div>
+            <div class="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Access Key -->
+                    <input type="hidden" name="access_key" value="7d149d23-c0b0-4e09-9b5f-3a84136eccde">
+
+                    <!-- Form Inputs -->
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="fitness-level">Current Fitness Level</label>
+                        <select id="fitness-level" name="fitnessLevel" class="form-control">
+                            <option value="beginner">Beginner - New to fitness</option>
+                            <option value="intermediate">Intermediate - Some experience</option>
+                            <option value="advanced">Advanced - Regularly active</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="goals">Your Fitness Goals</label>
+                        <textarea id="goals" name="message" class="form-control" rows="4" required></textarea>
+                    </div>
+
+                    <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <!-- Custom Confirmation / Success Page (Optional) -->
+                    <!-- Uncomment and set the URL if you want a custom thank you page -->
+                    <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+                    <button type="submit" class="submit-button">Start My Transformation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Meltin90</h3>
-                <ul class="footer-links">
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#transformations">Success Stories</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Melt in 90 Days</h3>
+                    <p>Transform your body and life with our proven 90-day program.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#transformations">Transformations</a></li>
+                        <li><a href="#meal-plans">Meal Plans</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Programs</h3>
-                <ul class="footer-links">
-                    <li><a href="#meal-plans">Meal Plans</a></li>
-                    <li><a href="#fitness">Fitness Programs</a></li>
-                    <li><a href="#coaching">Coaching</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Melt in 90 Days. All rights reserved.</p>
             </div>
-            <div class="footer-section">
-                <h3>Support</h3>
-                <ul class="footer-links">
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                    <li><a href="#terms">Terms of Service</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2023 Meltin90. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.querySelector('.menu-icon').addEventListener('click', () => {
+            document.querySelector('.mobile-menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
