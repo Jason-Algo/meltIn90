@@ -773,7 +773,6 @@
                 <form action="https://api.web3forms.com/submit" method="POST">
                     <!-- Access Key -->
                     <input type="hidden" name="access_key" value="7d149d23-c0b0-4e09-9b5f-3a84136eccde">
-
                     <!-- Form Inputs -->
                     <div class="form-group">
                         <label for="name">Full Name</label>
@@ -799,6 +798,13 @@
                         <label for="goals">Your Goals</label>
                         <textarea id="goals" name="message" class="form-control" rows="4" required></textarea>
                     </div>
+
+                    <!-- Hidden Inputs for BMI Data -->
+                    <input type="hidden" id="bmi" name="bmi">
+                    <input type="hidden" id="height" name="height">
+                    <input type="hidden" id="weight" name="weight">
+                    <input type="hidden" id="age" name="age">
+                    <input type="hidden" id="gender" name="gender">
 
                     <!-- Honeypot Spam Protection -->
                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
@@ -859,6 +865,13 @@
             document.getElementById('bmiValue').innerText = bmiValue;
             document.getElementById('bmiResult').style.display = 'block';
             document.getElementById('main-form').style.display = 'block';
+
+            // Set hidden inputs for BMI data
+            document.getElementById('bmi').value = bmiValue;
+            document.getElementById('height').value = height;
+            document.getElementById('weight').value = weight;
+            document.getElementById('age').value = document.getElementById('age').value;
+            document.getElementById('gender').value = document.getElementById('gender').value;
         }
     </script>
 </body>
