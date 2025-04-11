@@ -766,7 +766,6 @@
                 <!-- BMI Result -->
                 <div id="bmiResult" style="display: none; margin-top: 20px;">
                     <h3>Your BMI is: <span id="bmiValue"></span></h3>
-                    <p id="bmiMessage"></p>
                 </div>
             </div>
 
@@ -856,24 +855,10 @@
             const height = document.getElementById('height').value;
             const weight = document.getElementById('weight').value;
             const bmiValue = (weight / (height * height / 10000)).toFixed(2);
-            const bmiMessage = getBMIMessage(bmiValue);
 
             document.getElementById('bmiValue').innerText = bmiValue;
-            document.getElementById('bmiMessage').innerText = bmiMessage;
             document.getElementById('bmiResult').style.display = 'block';
             document.getElementById('main-form').style.display = 'block';
-        }
-
-        function getBMIMessage(bmi) {
-            if (bmi < 18.5) {
-                return "You are underweight.";
-            } else if (bmi >= 18.5 && bmi < 24.9) {
-                return "You have a normal weight.";
-            } else if (bmi >= 25 && bmi < 29.9) {
-                return "You are overweight.";
-            } else {
-                return "You are obese.";
-            }
         }
     </script>
 </body>
